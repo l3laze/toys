@@ -1,0 +1,13 @@
+os:
+  - linux
+      
+language: bash
+
+before_script:
+  - chmod u+rwx ./sind.sh
+  - chmod u+rwx ./test.sh
+
+script:
+  - shellcheck sind.sh
+  - shellcheck test.sh
+  - ./test.sh
