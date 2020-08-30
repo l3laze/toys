@@ -50,13 +50,13 @@ list [like] Show list of sub-commands. If \"like\" is provided it's used as a re
       *)
          local grepc
          local greps
-         grepc="$(grep -c $1 <<< $config)"
-         greps="$(grep $1 <<< $config)"
+         grepc="$(grep -c $1 <<< $commands)"
+         greps="$(grep $1 <<< $commands)"
 
          if [[ "$grepc" == "0" ]]; then
            echo "Unknown sub-command: $1."
          elif [[ "$grepc" != "1" ]]; then
-           echo -en "Multiple sub-commands contain '$1':\n$greps"
+           echo -en "Multiple sub-commands contain '$1':\n$greps\n"
          else
            eval "${greps#* }"
          fi
