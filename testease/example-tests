@@ -1,0 +1,3 @@
+testease "Label" "$((2+2))" 4
+testease "Hard one" "$(if [[ -e $0 ]]; then echo $?; fi)" 0
+testease "Heavy" "$(command -v bash >/dev/null; echo $?)" 0
