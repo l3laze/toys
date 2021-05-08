@@ -22,4 +22,6 @@ jobs:
         node-version: 14.x
     - run: npm i -g androidjs-builder
     - run: npm i androidjs
+    - run: yes | androidjs init
+    - run: yes | npm init
     - run: androidjs b -f
